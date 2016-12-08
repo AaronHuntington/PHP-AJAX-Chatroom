@@ -1,0 +1,16 @@
+.borderRed{border: 2px solid red;}
+
+
+#chat_container{
+    height: 500px;
+}
+
+#chat_entry_container{
+    /*height: 40px;*/
+    margin-top: 5px;
+}
+
+    #chat_form_input{
+        height: 30px;
+        margin: 3px 0;
+    }
