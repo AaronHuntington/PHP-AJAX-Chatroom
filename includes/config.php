@@ -1,7 +1,9 @@
 <?php
     defined("DS") ? null : define("DS", DIRECTORY_SEPARATOR);
 
-    define("BASE_URL","/gitHub/PHP-AJAX-Chatroom");
+        
+
+    define("BASE_URL","/gitHub/PHP-AJAX-Chatroom/");
     define("ROOT_PATH",$_SERVER["DOCUMENT_ROOT"] . "/gitHub/PHP-AJAX-Chatroom/");
 
     // Database Information 
