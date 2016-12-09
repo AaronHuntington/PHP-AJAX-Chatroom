@@ -7,6 +7,8 @@
         public $message;
         public $date;
 
+        public $guest_name; //Used for function 'create_chat_switch_on()'
+
         public function enter_message_to_db(){
             global $database;
 
@@ -23,14 +25,35 @@
            return $send_to_database;
         }
 
-        public function test(){
-            echo $this->date;
-            echo '<br>';
-            echo $this->name;
-            echo '<br>';
-            echo $this->key;
-            echo '<br>';
-            echo $this->message;
+        public function create_chat_switch_on(){
+            global $database;
+
+            $guest_name = $database->escape_string($this->guest_name);
+            $key        = $this->key;
+
+            $sql = "INSERT INTO chatroom_switch (`guest_name`,`the_key`,`switch`) 
+                VALUES ('".$guest_name."','".$key."','1')";
+
+            $send_to_database= $database->query($sql);
+
+            return $send_to_database;
+        }
+
+        public function key_generator($guest){
+            date_default_timezone_set('America/Chicago');
+            $random_number_start = rand(100,999);
+            $random_number_end = rand(100,999);
+            $date = date("mdy");
+            $time = date("his", time());
+
+            // $key = $random_number_start.$date.$time.$random_number_end;
+            $key = $random_number_start.$time;
+
+            $this->guest_name   = $guest;
+            $this->key          = $key;
+            $this->create_chat_switch_on();
+
+            header('location: chatroom.php?guest='.$guest.'&susi='.$key);
         }
     }
 ?>

@@ -12,8 +12,8 @@
         <!-- Main CSS -->
         <link rel="stylesheet" href="<?php echo BASE_URL; ?>css/main.css">
         <!-- jQuery Script -->
-        <script src="js/jquery-1.10.2.js"></script>
-        <script src="js/chatroom.js"></script>
+        <script src="<?php echo BASE_URL; ?>js/jquery-1.10.2.js"></script>
+        <script src="<?php echo BASE_URL; ?>js/chatroom.js"></script>
     </head>
     <body>
         <section class="row borderRed">

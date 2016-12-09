@@ -1,6 +1,21 @@
 <?php
     require_once("/includes/config.php");
     include(INCLUDES_ROOTPATH."/header.php");
+
+    $key_generator = new chatroom;
+
+
+
+
+
+    if(isset($_GET['guest']) && isset($_GET['susi']) === false){
+        $guest = $_GET['guest'];
+        $key_generator->key_generator($guest);
+    }
+
+
+
+
 ?>
     <section class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -13,5 +28,3 @@
         </div>
     </section>  
 <?php include(INCLUDES_ROOTPATH."/footer.php"); ?>
-
-
