@@ -16,19 +16,22 @@
             type:'POST',
             success:function(response)
             {
-                document.getElementById('chatSwitch_container').innerHTML = response;
+                document.getElementById('chatSwitch_section').innerHTML = response;
             }
         });     
     }
-
 </script>
 
 <!-- <input type="button" value="test" onclick="updateChatTables()" /> -->
 
 <h2 class="text-center">Admin Area</h2>
-<section class="row">
-    <div id="chatSwitch_container" class="col-md-10 col-md-offset-1 borderRed">
-    </div>
+<section id="chatSwitch_section" class="row">
+ <!--    <div id="chatSwitch_container" class="col-md-10 col-md-offset-1 borderRed">
+        <div id="chatSwitch_activeBox" class="col-md-6">
+        </div>
+        <div id="chatSwitch_inactiveBox" class="col-md-6">
+        </div>
+    </div> -->
 </section>
 
 <?php include(INCLUDES_ROOTPATH."/footer.php"); ?>

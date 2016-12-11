@@ -1,5 +1,6 @@
 .borderRed{border: 2px solid red;}
-
+.borderBlue{border: 2px solid blue;}
+.borderGreen{border: 2px solid green;}
 
 #chat_container{
     height: 500px;
