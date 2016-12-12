@@ -1,7 +1,6 @@
 <?php
 
     class chatroom_switch{
-
         public function chatroom_switch_update(){
             global $database;
             $sql = "SELECT * FROM chatroom_switch";
@@ -13,8 +12,7 @@
             }
             return $data;
         }
-
-        function chatrooms(){
+        public function chatrooms(){
             global $database;
 
             $sql = "SELECT * FROM chatroom_switch";
@@ -24,6 +22,4 @@
             return $result;
         }
     }
-    
-
 ?>

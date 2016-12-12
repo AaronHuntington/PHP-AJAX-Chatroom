@@ -1,6 +1,6 @@
 <?php
     require_once("../includes/config.php");
-    include(INCLUDES_ROOTPATH."/header.php");
+    include(INCLUDES_ROOTPATH."/init.php");
 
     $switch = new chatroom_switch;
     $chat_switch = $switch->chatroom_switch_update();
@@ -49,7 +49,7 @@
                             echo '<tr>';
                             echo '<td>'.$guestName.'</td>';
                             echo '<td>'.$key.'</td>';
-                            echo '<td><a href="#">Delete</a></td>';
+                            echo '<td><a href="deleteChat.php?key='.$key.'">Delete</a></td>';
                             echo '</tr>';
                         }
                     }
