@@ -56,12 +56,21 @@
             header('location: chatroom.php?guest='.$guest.'&susi='.$key);
         }
 
+        public function setChatroom_inActive($key){
+            global $database;
+
+            $sql = 'UPDATE chatroom_switch SET switch=0 WHERE the_key='.$key.'';
+
+            $send_to_database = $database->query($sql);
+            return $send_to_database; 
+        }
+
         public function delete_chatroom_switch($key){
             global $database;
 
             $sql = 'DELETE FROM chatroom_switch WHERE the_key = '.$key.'';
 
-            $send_to_database= $database->query($sql);
+            $send_to_database = $database->query($sql);
 
             return $send_to_database;
         }
@@ -74,5 +83,6 @@
             $send_to_database= $database->query($sql);
             return $send_to_database;
         }
+
     }
 ?>

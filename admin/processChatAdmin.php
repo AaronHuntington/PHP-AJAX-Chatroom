@@ -25,7 +25,7 @@
                             echo '<tr>';
                             echo '<td>'.$guestName.'</td>';
                             echo '<td>'.$key.'</td>';
-                            echo '<td><a href="#">Set Inactive</a></td>';
+                            echo '<td><a href="setInactive.php?key='.$key.'"">Set Inactive</a></td>';
                             echo '</tr>';
                         }
                     }
