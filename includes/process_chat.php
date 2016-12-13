@@ -27,10 +27,11 @@
     if(isset($_POST['chatKey'])){
         $chatroom = new chatroom;
         $key = $_POST['chatKey'];
+        $person = $_POST['name'];
 
         $messages = $chatroom->get_chatMessages_byKey($key);
 
-        echo '<pre>';
+        // echo '<pre>';
         // var_dump($messages);
 
 
@@ -39,6 +40,22 @@
             $name       = $message[2];
             $message    = $message[4];
 
+            if($person == $name){
+                echo '<div id="firstPerson_chat" class="clearfix">';
+                echo '<p class="pull-right">';
+                echo $message;
+                echo '<br><span class="pull-right">12:00 Dec25</span>';
+                echo '</p>';
+                echo '</div>';
+            } else {
+                echo '<div id="secondPerson_chat" class="clearfix">';
+                echo '<h3>'.$name.'</h3>';
+                echo '<p class="pull-left">';
+                echo $message;
+                echo '<br><span class="pull-right">12:00 Dec25</span>';
+                echo '</p>';
+                echo '</div>';
+            }
         }
 
 

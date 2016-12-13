@@ -21,12 +21,13 @@
 
     function show_chatMessages() {
         var chatKey = $("#chatKey").val();
+        var name = $("#chatName").val();
 
         $.ajax({
         url:'includes/process_chat.php',
         type:'POST',
         // data:'chat='+chatText,
-        data:{chatKey:chatKey},
+        data:{name:name,chatKey:chatKey},
         success:function (response)
         {
             $("#chatBox").html(response);
@@ -41,27 +42,7 @@
             <h1 class="text-center">Quack</h1>
             <div id="chat_container" class="col-md-10 col-md-offset-1 borderRed">
                 <h3>Greetings <?php echo $guest;?>! We will be right with you shortly.</h3>
-                <div id="chatBox" class="" style="height: 440px; overflow-y: scroll;">
-
-                    <div id="firstPerson_chat">
-                    </div>
-
-                    <div id="secondPerson_chat">
-                    </div>
-
-
-                    <?php
-
-
-                    
-
-
-
-
-
-
-
-                    ?>
+                <div id="chatBox" class="clearfix" style="height: 440px; overflow-y: scroll;">
                 </div>
             </div>
             <div id="chat_entry_container" class="col-md-10 col-md-offset-1 borderRed">
@@ -69,4 +50,12 @@
             </div>
         </div>
     </section>  
+
+    <script>
+        $("#message").keyup(function(event){
+            if(event.keyCode == 13){
+                $("#chatroom_sendbtn").click();
+            }
+        });
+    </script>
 <?php include(INCLUDES_ROOTPATH."/footer.php"); ?>

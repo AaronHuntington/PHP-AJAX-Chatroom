@@ -1,3 +1,8 @@
+/*======= Universal =========*/
+.clear {clear:both;display:block;overflow:hidden;visibility:hidden;width:0;height:0}
+.clearfix:after{clear:both;content:' ';display:block;font-size:0;line-height:0;visibility:hidden;width:0;height:0}
+* html .clearfix,*:first-child+html .clearfix{zoom:1}
+
 .borderRed{border: 2px solid red;}
 .borderBlue{border: 2px solid blue;}
 .borderGreen{border: 2px solid green;}
@@ -11,7 +16,23 @@
     margin-top: 5px;
 }
 
-    #message{
-        height: 30px;
-        margin: 3px 0;
+    #firstPerson_chat p{
+        max-width: 400px;
+        font-size: 20px;
+        padding: 10px;
+        background: #ADD8E6;
+        border-radius: 15px;
+    } 
+
+    #secondPerson_chat h3{
+        margin-left: 10px;
+        margin-bottom: -2px;
+    }
+
+    #secondPerson_chat p{
+        max-width: 400px;
+        font-size: 20px;
+        padding: 10px;
+        background: #FF8784;
+        border-radius: 15px;
     }
