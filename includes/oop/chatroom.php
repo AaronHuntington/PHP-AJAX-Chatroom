@@ -9,6 +9,17 @@
 
         public $guest_name; //Used for function 'create_chat_switch_on()'
 
+        public function get_chatMessages_byKey($key){
+            global $database; 
+
+            $sql = 'SELECT * FROM chatrooms WHERE the_key='.$key.'';
+            $query = $database->query($sql);
+
+            $result = $query->fetch_all(PDO::FETCH_ASSOC);
+
+            return $result;
+        }
+
         public function enter_message_to_db(){
             global $database;
 
